@@ -3,5 +3,6 @@ SELECT
 FROM 
     participants
 WHERE 
-    email = ?,
+    email = ?
+AND
     password = ?
