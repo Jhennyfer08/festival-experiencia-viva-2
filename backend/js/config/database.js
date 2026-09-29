@@ -32,6 +32,7 @@ export class Database {
             return result;
         } catch (error) {
             console.error(`Identified error on executeQuery: ${error}`);
+            throw error;
         } finally {
             await this.disconnect();
         }

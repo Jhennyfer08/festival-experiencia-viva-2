@@ -1,6 +1,5 @@
 SELECT 
     name,
-    email,
-    admin
+    email
 FROM 
     participants
