@@ -1,9 +1,10 @@
 import { Router } from "express";
 import { Participants } from "./participants.class.js";
+import { Validations } from "./participants.validations.js";
 
 const router = Router();
 
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
     try {
         const participants = new Participants();
         const result = await participants.findAll();
@@ -17,9 +18,11 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", async (req, res, next) => {
     try {
         const participants = new Participants({ id: req.params.id });
+        await new Validations(participants).verifiyId();
+        
         const [result] = await participants.findById();
 
         return res.status(200).json({
@@ -31,7 +34,7 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", async (req, res, next) => {
     try {
         const participants = new Participants(req.body);
         await participants.create();
@@ -45,7 +48,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.post("/login", async (req, res) => {
+router.post("/login", async (req, res, next) => {
     try {
         const participants = new Participants(req.body);
         const result = await participants.login();
@@ -68,9 +71,11 @@ router.post("/login", async (req, res) => {
     }
 });
 
-router.put("/", async (req, res) => {
+router.put("/", async (req, res, next) => {
     try {
         const participants = new Participants(req.body);
+        await new Validations(participants).verifiyId();
+
         await participants.update();
 
         return res.status(200).json({
@@ -82,9 +87,11 @@ router.put("/", async (req, res) => {
     }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req, res, next) => {
     try {
-        const participants = new Participants({ id: req.params.body });
+        const participants = new Participants({ id: req.params.id });
+        await new Validations(participants).verifiyId();
+
         await participants.delete();
 
         return res.status(200).json({
