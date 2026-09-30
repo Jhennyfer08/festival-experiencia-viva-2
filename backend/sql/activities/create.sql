@@ -1,4 +1,4 @@
-INSERT INTO participants(
+INSERT INTO activities(
     name,
     description,
     position,

@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 
 import participants from "./modules/participants/participants.routes.js";
+import activities from "./modules/activities/activities.routes.js";
 
 const app = express();
 
@@ -9,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/participants", participants);
+app.use("/activities", activities);
 
 app.use(async (err, req, res, next) => {
     return res.status(err.status ?? 500).json({
