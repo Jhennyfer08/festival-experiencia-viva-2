@@ -7,4 +7,4 @@ FROM
 LEFT JOIN 
     activities A ON I.id_activity = A.id
 LEFT JOIN 
-    participants A ON I.id_participant = P.id
+    participants P ON I.id_participant = P.id

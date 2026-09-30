@@ -1,6 +1,10 @@
-SELECT 
-    * 
+SELECT
+    A.*,
+    COUNT(I.id) AS quantity
 FROM 
-    activities
+    activities A
+LEFT JOIN 
+    inscriptions I ON I.id_activity = A.id
 WHERE 
-    id = ?
+    A.id = ?
+GROUP BY A.id
