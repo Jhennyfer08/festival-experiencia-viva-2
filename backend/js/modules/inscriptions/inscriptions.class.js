@@ -51,6 +51,18 @@ export class Inscriptions {
         return result;
     }
 
+        async update() {
+        const database = new Database();
+
+        const params = [
+            this.id_activity,
+            this.id_participant,
+            this.id
+        ];
+
+        await database.executeQueryFile("./sql/inscriptions/update.sql", params);
+    }
+
     async delete() {
         const database = new Database();
 
