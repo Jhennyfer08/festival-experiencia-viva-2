@@ -1,0 +1,28 @@
+header {
+    min-height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/frontend/img/background/banner.webp") center / cover
+        no-repeat;
+
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 16rem;
+        }
+
+        span {
+            /* position: absolute; */
+            font-family: "Rubik", sans-serif;
+            font-weight: bold;
+            font-size: 5rem;
+            color: var(--light-color);
+        }
+    }
+}
+
+

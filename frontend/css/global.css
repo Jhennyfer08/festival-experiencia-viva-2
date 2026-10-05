@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+    --primary-color: #50515f;
+    --secondary-color: #172b14;
+    --accent-color: #ffdc40;
+    --light-color: #fff4ed;
+    --danger-color: #561818;
+
+    --radius: 0.5rem;
+    --border-style: 2px solid var(--primary-color);
+
+    --size-1: 1rem;
+    --size-2: 2rem;
+}
+
+/*GLOBALS*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Comfortaa", sans-serif;
+    font-size: var(--size-1);
+    color: var(--primary-color);
+    
+    background-color: var(--light-color);
+
+    ul {
+        display: flex;
+        list-style-type: none;
+    }
+
+    a{
+        color: inherit;
+        text-decoration: none;
+        display: inline-block;
+        transition: .3s ease;
+
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
