@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="O Festival Experiência Viva reúne atividades culturais, artísticas e educativas para proporcionar experiências de aprendizado, criatividade e interação."
+        />
+
+        <link
+            rel="shortcut icon"
+            href="/frontend/img/icons/logo.png"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="/frontend/css/global.css" />
+        <link rel="stylesheet" href="/frontend/css/components.css" />
+
+        <script type="module" src="/frontend/js/config/components.js"></script>
+        <script type="module" src="/frontend/js/home.js"></script>
+
+        <title>Festival Experiência Viva</title>
+    </head>
+    <body>
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <main>
+            <h2>Cadastro de Inscrições</h2>
+
+            <section>
+                <form action="" class="form" id="form">
+
+                    <article class="form-item">
+                        <label for="id_activity">Atividade:</label>
+                        <select name="activity" id="id_activity"></select>
+                    </article>
+
+                    <article class="form-item">
+                        <label for="id_participant">Participante:</label>
+                        <select name="participant" id="id_participant"></select>
+                    </article>
+
+                    <span id="errorMesage"></span>
+
+                    <button type="submit" id="submitButton">Cadastrar</button>
+                </form>
+            </section>
+
+            <h2>Lista de Inscrições</h2>
+
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Atividade</th>
+                            <th>Participante</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody">
+                        <tr>
+                            <td>Atividade</td>
+                            <td>Participante</td>
+                            <td>
+                                <button type="button" class="delete-button">Excluir</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer id="footer"></footer>
+    </body>
+</html>

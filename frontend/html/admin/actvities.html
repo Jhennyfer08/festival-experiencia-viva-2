@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="O Festival Experiência Viva reúne atividades culturais, artísticas e educativas para proporcionar experiências de aprendizado, criatividade e interação."
+        />
+
+        <link
+            rel="shortcut icon"
+            href="/frontend/img/icons/logo.png"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="/frontend/css/global.css" />
+        <link rel="stylesheet" href="/frontend/css/components.css" />
+
+        <script type="module" src="/frontend/js/config/components.js"></script>
+        <script type="module" src="/frontend/js/home.js"></script>
+
+        <title>Festival Experiência Viva</title>
+    </head>
+    <body>
+        <header id="header"></header>
+        <nav id="nav"></nav>
+
+        <main>
+            <h2>Cadastro de Atividades</h2>
+
+            <section>
+                <form action="" class="form" id="form">
+                    <article class="form-item">
+                        <label for="name">Nome:</label>
+                        <input
+                            type="text"
+                            name="name-input"
+                            id="name"
+                            required
+                        />
+                    </article>
+
+                    <article class="form-item">
+                        <label for="description">Descrição:</label>
+                        <textarea
+                            type="text"
+                            name="description-input"
+                            id="description"
+                            required
+                        >
+                        </textarea>
+                    </article>
+
+                    <article class="form-item">
+                        <label for="position">Localização:</label>
+                        <input
+                            type="text"
+                            name="position-input"
+                            id="position"
+                            required
+                        />
+                    </article>
+
+                    <article class="form-item">
+                        <label for="capacity">Capacidade:</label>
+                        <input
+                            type="number"
+                            name="capacity-input"
+                            id="capacity"
+                            required
+                        />
+                    </article>
+
+                    <article class="form-item">
+                        <label for="image">Imagem:</label>
+                        <input
+                            type="url"
+                            name="image-input"
+                            id="password"
+                            autocomplete="url"
+                            required
+                        />
+                    </article>
+
+                    <article class="form-item">
+                        <label for="date">Data:</label>
+                        <input
+                            type="date"
+                            name="date-input"
+                            id="date"
+                            required
+                        />
+                    </article>
+
+                    <article class="form-item">
+                        <label for="time">Senha:</label>
+                        <input
+                            type="time"
+                            name="time-input"
+                            id="time"
+                            required
+                        />
+                    </article>
+
+                    <span id="errorMesage"></span>
+
+                    <button type="submit" id="submitButton">Cadastrar</button>
+                </form>
+            </section>
+
+            <h2>Lista de Atividades</h2>
+
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Localização</th>
+                            <th>Capacidade</th>
+                            <th>Data</th>
+                            <th>Senha</th>
+                            <th>Editar</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody">
+                        <tr>
+                            <td>Nome</td>
+                            <td>Email</td>
+                            <td>Nome</td>
+                            <td>Email</td>
+                            <td>Nome</td>
+                            <td>Email</td>
+                            <td>
+                                <button type="button" class="edit-button">
+                                    Editar
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="delete-button">
+                                    Excluir
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer id="footer"></footer>
+    </body>
+</html>

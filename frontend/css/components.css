@@ -3,26 +3,82 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/frontend/img/background/banner.webp") center / cover
+    background: url("/frontend/img/background/banner.png") center / cover
         no-repeat;
 
-    section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-            width: 16rem;
-        }
-
-        span {
-            /* position: absolute; */
-            font-family: "Rubik", sans-serif;
-            font-weight: bold;
-            font-size: 5rem;
-            color: var(--light-color);
-        }
+    img {
+        width: 20rem;
     }
 }
 
+nav {
+    width: 100%;
 
+    display: flex;
+    justify-content: center;
+
+    color: var(--light-color);
+    text-shadow: 2px 3px 2px #0000008f;
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+
+    ul {
+        width: 70%;
+        padding: var(--size-1);
+
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    a:hover {
+        color: var(--accent-color);
+    }
+}
+
+footer {
+    padding: var(--size-2) 15%;
+
+    display: flex;
+    gap: 8rem;
+
+    color: var(--accent-color);
+    background-color: var(--primary-color);
+
+    section {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: var(--size-2);
+        
+        address{
+            font-style: normal;
+        }
+
+        h2 {
+            margin-bottom: var(--size-1);
+        }
+
+        iframe {
+            width: 100%;
+        }
+
+        ul {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        span {
+            line-height: 0.7;
+            font-family: "Rubik", sans-serif;
+            font-weight: bold;
+            font-size: 13rem;
+        }
+    }
+}
