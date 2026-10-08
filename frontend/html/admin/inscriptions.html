@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/frontend/css/components.css" />
 
         <script type="module" src="/frontend/js/config/components.js"></script>
-        <script type="module" src="/frontend/js/home.js"></script>
+        <script type="module" src="/frontend/js/admin/inscriptions.js"></script>
 
         <title>Festival Experiência Viva</title>
     </head>
@@ -33,15 +33,19 @@
 
                     <article class="form-item">
                         <label for="id_activity">Atividade:</label>
-                        <select name="activity" id="id_activity"></select>
+                        <select name="activity" id="id_activity">
+                            <option value="#" selected disabled>Selecione uma Atividade</option>
+                        </select>
                     </article>
 
                     <article class="form-item">
                         <label for="id_participant">Participante:</label>
-                        <select name="participant" id="id_participant"></select>
+                        <select name="participant" id="id_participant">
+                            <option value="#" selected disabled>Selecione uma Participante</option>
+                        </select>
                     </article>
 
-                    <span id="errorMesage"></span>
+                    <span id="errorMessage"></span>
 
                     <button type="submit" id="submitButton">Cadastrar</button>
                 </form>
@@ -59,15 +63,7 @@
                         </tr>
                     </thead>
 
-                    <tbody id="tbody">
-                        <tr>
-                            <td>Atividade</td>
-                            <td>Participante</td>
-                            <td>
-                                <button type="button" class="delete-button">Excluir</button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="tbody"></tbody>
                 </table>
             </section>
         </main>

@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/frontend/css/components.css" />
 
         <script type="module" src="/frontend/js/config/components.js"></script>
-        <script type="module" src="/frontend/js/home.js"></script>
+        <script type="module" src="/frontend/js/admin/activities.js"></script>
 
         <title>Festival Experiência Viva</title>
     </head>
@@ -46,7 +46,6 @@
                             type="text"
                             name="description-input"
                             id="description"
-                            required
                         >
                         </textarea>
                     </article>
@@ -76,9 +75,8 @@
                         <input
                             type="url"
                             name="image-input"
-                            id="password"
+                            id="image"
                             autocomplete="url"
-                            required
                         />
                     </article>
 
@@ -93,7 +91,7 @@
                     </article>
 
                     <article class="form-item">
-                        <label for="time">Senha:</label>
+                        <label for="time">Horário:</label>
                         <input
                             type="time"
                             name="time-input"
@@ -102,7 +100,7 @@
                         />
                     </article>
 
-                    <span id="errorMesage"></span>
+                    <span id="errorMessage"></span>
 
                     <button type="submit" id="submitButton">Cadastrar</button>
                 </form>
@@ -119,32 +117,13 @@
                             <th>Localização</th>
                             <th>Capacidade</th>
                             <th>Data</th>
-                            <th>Senha</th>
+                            <th>Horário</th>
                             <th>Editar</th>
                             <th>Excluir</th>
                         </tr>
                     </thead>
 
-                    <tbody id="tbody">
-                        <tr>
-                            <td>Nome</td>
-                            <td>Email</td>
-                            <td>Nome</td>
-                            <td>Email</td>
-                            <td>Nome</td>
-                            <td>Email</td>
-                            <td>
-                                <button type="button" class="edit-button">
-                                    Editar
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="delete-button">
-                                    Excluir
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="tbody"></tbody>
                 </table>
             </section>
         </main>
