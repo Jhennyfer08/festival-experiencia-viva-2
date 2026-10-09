@@ -9,5 +9,5 @@ async function loadComponents(filePath, id) {
 }
 
 await loadComponents("/frontend/html/components/header.html", "header");
-// await loadComponents("/frontend/html/components/nav.html", "nav");
+await loadComponents("/frontend/html/components/nav.html", "nav");
 await loadComponents("/frontend/html/components/footer.html", "footer");
