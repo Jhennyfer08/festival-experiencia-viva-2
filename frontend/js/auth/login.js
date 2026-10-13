@@ -14,10 +14,15 @@ async function login(event) {
     if (!result.success) {
         error.textContent = result.message;
     } else {
-        localStorage.setItem("access", JSON.stringify(result));
+        let access = localStorage.setItem("access", JSON.stringify(result));
         error.textContent = "";
 
-        window.location.href = "/frontend/html/home.html";
+        if (access.role === "admin") {
+            window.location.href = "/frontend/html/admin/participants.html";
+        } else{
+            window.location.href = "/frontend/html/home.html";
+        }
+
     }
 }
 

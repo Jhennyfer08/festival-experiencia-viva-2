@@ -22,7 +22,7 @@ router.get("/:id", async (req, res, next) => {
     try {
         const inscriptions = new Inscriptions({ id: req.params.id });
         await new Validations(inscriptions).verifiyId();
-        
+
         const [result] = await inscriptions.findById();
 
         return res.status(200).json({
@@ -34,17 +34,44 @@ router.get("/:id", async (req, res, next) => {
     }
 });
 
+router.get("/:id_activity/:id_participant", async (req, res, next) => {
+    try {
+        const inscriptions = new Inscriptions({
+            id_activity: req.params.id_activity,
+            id_participant: req.params.id_participant,
+        });
+
+        const [result] = await inscriptions.findCreated();
+
+        if (!result) {
+            return res.status(206).json({
+                success: false,
+                message: "Inscrição não encontrada."
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            content: result,
+        });
+
+    } catch (error) {
+        next(error);
+    }
+});
+
 router.post("/", async (req, res, next) => {
     try {
         const inscriptions = new Inscriptions(req.body);
         await new Validations(inscriptions).verifyCapacity();
         await new Validations(inscriptions).verifyCreated();
-        
+
         await inscriptions.create();
-        
+
         return res.status(201).json({
             success: true,
             message: "Cadastro realizado com sucesso.",
+            id: inscriptions.id,
         });
     } catch (error) {
         next(error);
