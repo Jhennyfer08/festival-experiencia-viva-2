@@ -273,8 +273,8 @@ table {
             }
 
             .participants {
-                h2{
-                    margin-bottom: 2rem
+                h2 {
+                    margin-bottom: 2rem;
                 }
 
                 ul {
@@ -283,5 +283,60 @@ table {
                 }
             }
         }
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 2rem 10%;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    .activity-container {
+        flex-direction: column;
+
+        .img-container {
+            width: 100%;
+            height: 15rem;
+            padding: 0;
+            img {
+                border-radius: .5rem .5rem 50% 50%;
+            }
+        }
+        .activity-info {
+            width: 100%;
+
+            .place{
+                justify-content: center;
+            }
+
+            button{
+                width: 100%;
+            }
+        }
+    }
+
+    tr,
+    td {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border: 2px solid var(--primary-color);
+        border-radius: .5rem;
+        background-color: var(--glass-color);
+    }
+
+    tbody td {
+        padding: 0.5rem 0;
     }
 }

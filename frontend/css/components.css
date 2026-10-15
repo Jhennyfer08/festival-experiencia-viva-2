@@ -53,8 +53,8 @@ footer {
         justify-content: space-between;
         align-items: baseline;
         gap: var(--size-2);
-        
-        address{
+
+        address {
             font-style: normal;
         }
 
@@ -80,6 +80,26 @@ footer {
             font-family: "Rubik", sans-serif;
             font-weight: bold;
             font-size: 13rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        ul {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 2rem;
+
+        section {
+            span {
+                font-size: 7rem;
+            }
         }
     }
 }

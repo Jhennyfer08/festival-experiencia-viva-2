@@ -1,5 +1,17 @@
 import { api } from "/frontend/js/config/api.js";
 
+function createParticipants(participants) {
+    let html = "";
+
+    if (participants) {
+        for (const participant of participants) {
+            html += `<li>${participant}</li>`
+        }
+    }
+
+    return html;
+}
+
 async function loadAll() {
     const activities = await api.get("/activities");
     const container = document.getElementById("dashboard");
@@ -27,9 +39,7 @@ async function loadAll() {
                         <h2>Participants - ${element.quantity}/${element.capacity}</h2>
 
                         <ul>
-                            ${element.participants ? 
-                                element.participants.map(name => `<li>${name}</li>`).join("") 
-                            : ""}
+                            ${createParticipants(element.participants)}
                         </ul>
                     </div>
                 </div>

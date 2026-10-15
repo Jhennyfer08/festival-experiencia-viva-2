@@ -9,18 +9,39 @@ async function loadComponents(filePath, id) {
 }
 
 async function loadNavbar() {
-    let access = JSON.parse(localStorage.getItem("access")) || "none";
+    let access = JSON.parse(localStorage.getItem("access")) ?? {};
+
+    let html = "";
 
     if (access.role === "admin") {
-        await loadComponents("/frontend/html/components/navAdmin.html", "nav");
+        html = `
+        <ul>
+            <li><a href="/frontend/html/admin/dashboard.html">Métricas</a></li>
+            <li><a href="/frontend/html/admin/participants.html">Participantes</a></li>
+            <li><a href="/frontend/html/admin/actvities.html">Atividades</a></li>
+            <li><a href="/frontend/html/admin/inscriptions.html">Inscrições</a></li>
+            <li><a href="#" id="logout">Sair</a></li>
+        </ul>
+        `
     } else if (access.role === "user") {
-        await loadComponents("/frontend/html/components/navUser.html", "nav");
+        hmtl = `
+        <ul>
+            <li><a href="/frontend/html/home.html">Início</a></li>
+            <li><a href="/frontend/html/home.html#footer">Sobre</a></li>
+            <li><a href="#" id="logout">Sair</a></li>
+        </ul>
+        `
     } else {
-        await loadComponents("/frontend/html/components/nav.html", "nav");
+        html = `
+            <ul>
+                <li><a href="/frontend/html/auth/login.html">Entrar</a></li>
+                <li><a href="/frontend/html/auth/register.html">Cadastrar</a></li>
+            </ul>
+           `
     }
+    document.getElementById("nav").innerHTML = html;
 
     const element = document.getElementById("logout");
-
     if (element) {
         element.addEventListener("click", () => {
             localStorage.removeItem("access");
